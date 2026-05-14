@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, render_template
-from predict import predict_xray
+from backend.predict import predict_xray
 import os
 from werkzeug.utils import secure_filename
 
