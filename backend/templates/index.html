@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArchFit | Upload X-Ray</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark">〽</span>
+      <span>ArchFit</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/#about">About</a>
+      <a href="/#how">How It Works</a>
+      <a href="/upload" class="nav-pill">Upload & Diagnose</a>
+    </div>
+  </div>
+</nav>
+
+<section class="upload-page">
+  <h1 class="upload-title">Foot Arch Analysis</h1>
+  <p class="upload-subtitle">
+    Upload your foot X-ray for AI-powered arch classification and footwear guidance.
+  </p>
+
+  <div class="upload-card">
+    <label class="drop-zone" for="imageInput">
+      <div id="uploadText">
+        <div class="upload-icon">☁</div>
+        <h2>Upload Your Foot X-Ray</h2>
+        <p>Click here to browse JPG, JPEG, or PNG image</p>
+      </div>
+
+      <img id="preview">
+    </label>
+
+    <input class="hidden-input" type="file" id="imageInput" accept="image/*">
+
+    <button class="analyze-btn" id="predictBtn" onclick="predictImage()">
+      Analyze My X-Ray
+    </button>
+
+    <p class="secure-text">Your data is processed locally by the running Flask app.</p>
+  </div>
+
+  <div id="result" class="result-card"></div>
+
+  <div class="upload-note">
+    <strong>Disclaimer:</strong> This tool is for educational and research purposes only.
+    It is not a replacement for professional medical diagnosis.
+  </div>
+</section>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

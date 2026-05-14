@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArchFit</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark">〽</span>
+      <span>ArchFit</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="#about">About</a>
+      <a href="#how">How It Works</a>
+      <a href="/upload" class="nav-pill">Upload & Diagnose</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>Know Your Foot.<br>Choose the Right Shoe.</h1>
+      <p>
+        AI-powered foot arch detection using X-ray images — classify flat foot or normal foot
+        and receive footwear recommendations instantly.
+      </p>
+
+      <div class="hero-actions">
+        <a href="/upload" class="btn-white">Upload X-Ray Now</a>
+        <a href="#about" class="btn-outline">Learn More</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat-card">
+          <h3>840</h3>
+          <span>X-rays Trained</span>
+        </div>
+
+        <div class="stat-card">
+          <h3>94.47%</h3>
+          <span>F1 Score</span>
+        </div>
+
+        <div class="stat-card">
+          <h3>Instant</h3>
+          <span>Results</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <div class="medical-card">
+        <div class="scan-box">
+          <div class="scan-line"></div>
+          <div class="xray-foot"></div>
+        </div>
+        <h3>Foot X-Ray Analysis</h3>
+        <p>CNN + SVM based arch classification</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="section-inner">
+    <h2 class="section-title">Understanding Foot Arch Types</h2>
+
+    <div class="arch-grid">
+      <div class="arch-card red">
+        <h3><span class="icon-red">!</span> Flat Foot (Pes Planus)</h3>
+        <div class="arch-visual flat-visual"></div>
+        <p>
+          Arch absent or very low. Affects 20–30% of the population.
+          Can cause pain and joint issues if not properly managed with supportive footwear.
+        </p>
+      </div>
+
+      <div class="arch-card green">
+        <h3><span class="icon-green">✓</span> Normal Foot</h3>
+        <div class="arch-visual normal-visual"></div>
+        <p>
+          Healthy arch distributes weight evenly, absorbs shock effectively,
+          and supports proper posture. Optimal for overall foot health and mobility.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark-section">
+  <div class="section-inner">
+    <h2 class="section-title">Problems Caused by Flat Feet</h2>
+    <p class="section-subtitle">Understanding the impact of untreated flat foot conditions</p>
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <h3>Foot Pain</h3>
+        <p>Chronic pain in the arch and heel areas.</p>
+      </div>
+
+      <div class="problem-card">
+        <h3>Knee Stress</h3>
+        <p>Increased pressure on knee joints.</p>
+      </div>
+
+      <div class="problem-card">
+        <h3>Lower Back Pain</h3>
+        <p>Misalignment can affect spinal health.</p>
+      </div>
+
+      <div class="problem-card">
+        <h3>Poor Posture</h3>
+        <p>Body compensation may lead to poor posture.</p>
+      </div>
+
+      <div class="problem-card">
+        <h3>Joint Inflammation</h3>
+        <p>Excessive stress may cause inflammation.</p>
+      </div>
+
+      <div class="problem-card">
+        <h3>Abnormal Gait</h3>
+        <p>Walking pattern can become irregular.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <h2 class="section-title">Flat Foot vs Normal Foot Comparison</h2>
+
+    <table class="compare-table">
+      <tr>
+        <th>Feature</th>
+        <th>Flat Foot</th>
+        <th>Normal Foot</th>
+      </tr>
+      <tr>
+        <td>Arch Height</td>
+        <td>Absent or very low</td>
+        <td>Moderate, visible curve</td>
+      </tr>
+      <tr>
+        <td>Weight Distribution</td>
+        <td>Uneven, concentrated</td>
+        <td>Evenly distributed</td>
+      </tr>
+      <tr>
+        <td>Shock Absorption</td>
+        <td>Poor, limited capacity</td>
+        <td>Excellent natural cushioning</td>
+      </tr>
+      <tr>
+        <td>Pain Areas</td>
+        <td>Arch, heel, ankle, knee</td>
+        <td>Minimal to none</td>
+      </tr>
+      <tr>
+        <td>Recommended Shoes</td>
+        <td>Motion control, stability</td>
+        <td>Neutral, flexible</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="section-inner">
+    <h2 class="section-title">How It Works</h2>
+
+    <div class="steps-grid">
+      <div>
+        <div class="step-circle">1</div>
+        <h3>Upload X-Ray</h3>
+        <p>Upload your lateral foot X-ray image.</p>
+      </div>
+
+      <div>
+        <div class="step-circle">2</div>
+        <h3>CNN Feature Extraction</h3>
+        <p>The model extracts important visual features.</p>
+      </div>
+
+      <div>
+        <div class="step-circle">3</div>
+        <h3>SVM Classification</h3>
+        <p>The system classifies the foot as flat or normal.</p>
+      </div>
+
+      <div>
+        <div class="step-circle">4</div>
+        <h3>Recommendation</h3>
+        <p>The system suggests suitable footwear.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <h2 class="section-title">Footwear Recommendations Guide</h2>
+
+    <div class="recommend-grid">
+      <div class="recommend-card">
+        <span class="badge badge-red">FOR FLAT FOOT</span>
+        <h3>Recommended Footwear</h3>
+        <ul>
+          <li>✓ Motion Control Shoes</li>
+          <li>✓ Stability Shoes</li>
+          <li>✓ Maximum Cushioning</li>
+          <li>✓ Arch Support Insoles</li>
+        </ul>
+
+        <div class="note-box">
+          <strong>Avoid:</strong> Minimalist shoes, high heels, and footwear with no arch support.
+        </div>
+      </div>
+
+      <div class="recommend-card">
+        <span class="badge badge-green">FOR NORMAL FOOT</span>
+        <h3>Recommended Footwear</h3>
+        <ul>
+          <li>✓ Neutral Running Shoes</li>
+          <li>✓ Moderate Cushioning</li>
+          <li>✓ Flexible Soles</li>
+          <li>✓ Standard Athletic Shoes</li>
+        </ul>
+
+        <div class="note-box note-green">
+          <strong>Avoid:</strong> Heavy motion control shoes unless recommended by a specialist.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <h2>ArchFit</h2>
+      <p>AI-powered foot arch classification and shoe recommendation.</p>
+    </div>
+
+    <div>
+      <h3>Project</h3>
+      <p>CNN Feature Extraction + SVM Classification</p>
+      <p>Built by Divyanshu Agwekar & Puru Bansal</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
